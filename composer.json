@@ -1,5 +1,5 @@
 {
-    "name": "bighippo/algoliasearch-store-locator",
+    "name": "talos/algoliasearch-store-locator",
     "description": "Store Locator Module for Magento 2 using Algolia Search indexing.",
     "type": "magento2-module",
     "version": "1.0.0",
