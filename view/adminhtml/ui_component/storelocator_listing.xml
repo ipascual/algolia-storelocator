@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">storelocator_listing.storelocator_listing_data_source</item>
+        </item>
+    </argument>
+    <settings>
+        <buttons>
+            <button name="add">
+                <url path="*/*/edit"/>
+                <class>primary</class>
+                <label translate="true">Add New Store</label>
+            </button>
+        </buttons>
+        <spinner>storelocator_listing_columns</spinner>
+        <deps>
+            <dep>storelocator_listing.storelocator_listing_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="storelocator_listing_data_source" component="Magento_Ui/js/grid/provider">
+        <settings>
+            <storageConfig>
+                <param name="indexField" xsi:type="string">id</param>
+            </storageConfig>
+            <updateUrl path="mui/index/render"/>
+        </settings>
+        <aclResource>BigHippo_StoreLocator::storelocator</aclResource>
+        <dataProvider class="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider" name="storelocator_listing_data_source">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <listingToolbar name="listing_top">
+        <bookmark name="bookmarks"/>
+        <columnsControls name="columns_controls"/>
+        <filters name="listing_filters"/>
+        <paging name="listing_paging"/>
+    </listingToolbar>
+    <columns name="storelocator_listing_columns">
+        <column name="id">
+            <settings>
+                <filter>textRange</filter>
+                <label translate="true">ID</label>
+                <sorting>asc</sorting>
+            </settings>
+        </column>
+        <column name="name">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Name</label>
+            </settings>
+        </column>
+        <column name="street">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Street</label>
+            </settings>
+        </column>
+        <column name="city">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">City</label>
+            </settings>
+        </column>
+        <column name="region">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Region</label>
+            </settings>
+        </column>
+        <column name="postcode">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Postcode</label>
+            </settings>
+        </column>
+        <column name="country">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Country</label>
+            </settings>
+        </column>
+        <actionsColumn name="actions" class="BigHippo\StoreLocator\Ui\Component\Listing\StoreActions">
+            <settings>
+                <indexField>id</indexField>
+            </settings>
+        </actionsColumn>
+    </columns>
+</listing>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">storelocator_form.storelocator_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">Store Information</item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+    </argument>
+    <settings>
+        <buttons>
+            <button name="save" class="BigHippo\StoreLocator\Block\Adminhtml\Page\Edit\SaveButton"/>
+            <button name="back" class="BigHippo\StoreLocator\Block\Adminhtml\Page\Edit\BackButton"/>
+        </buttons>
+        <namespace>storelocator_form</namespace>
+        <dataScope>data</dataScope>
+        <deps>
+            <dep>storelocator_form.storelocator_form_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="storelocator_form_data_source">
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+        <settings>
+            <submitUrl path="storelocator/store/save"/>
+        </settings>
+        <dataProvider class="BigHippo\StoreLocator\Ui\StoreLocatorDataProvider" name="storelocator_form_data_source">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <fieldset name="general">
+        <settings>
+            <label translate="true">General Information</label>
+        </settings>
+        <field name="id" formElement="input">
+            <settings>
+                <dataType>text</dataType>
+                <visible>false</visible>
+                <dataScope>id</dataScope>
+            </settings>
+        </field>
+        <field name="name" sortOrder="10" formElement="input">
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>text</dataType>
+                <label translate="true">Name</label>
+                <dataScope>name</dataScope>
+            </settings>
+        </field>
+        <field name="street" sortOrder="20" formElement="input">
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>text</dataType>
+                <label translate="true">Street</label>
+                <dataScope>street</dataScope>
+            </settings>
+        </field>
+        <field name="city" sortOrder="30" formElement="input">
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>text</dataType>
+                <label translate="true">City</label>
+                <dataScope>city</dataScope>
+            </settings>
+        </field>
+        <field name="region" sortOrder="40" formElement="input">
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>text</dataType>
+                <label translate="true">Region</label>
+                <dataScope>region</dataScope>
+            </settings>
+        </field>
+        <field name="postcode" sortOrder="50" formElement="input">
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>text</dataType>
+                <label translate="true">Postcode</label>
+                <dataScope>postcode</dataScope>
+            </settings>
+        </field>
+        <field name="country" sortOrder="60" formElement="input">
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>text</dataType>
+                <label translate="true">Country</label>
+                <dataScope>country</dataScope>
+            </settings>
+        </field>
+    </fieldset>
+</form>

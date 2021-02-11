@@ -1,0 +1,21 @@
+{
+    "name": "bighippo/algoliasearch-store-locator",
+    "description": "Store Locator Module for Magento 2 using Algolia Search indexing.",
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "require": {
+        "magento/framework": "~102.0|~103.0",
+        "algolia/algoliasearch-magento-2": "^3.0"
+    },
+    "suggest": {
+        "algolia/algoliasearch-inventory-magento-2": "Algolia Search Inventory module for Magento 2.3.x and Algolia Search 1.12+ extension"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "BigHippo\\StoreLocator\\": ""
+        }
+    }
+}

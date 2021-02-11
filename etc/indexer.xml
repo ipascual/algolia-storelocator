@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Indexer/etc/indexer.xsd">
+    <indexer id="algolia_stores" view_id="algolia_stores" class="BigHippo\StoreLocator\Model\Indexer\StoreLocator">
+        <title translate="true">Algolia Search Store Locator</title>
+        <description translate="true">Rebuild Store Locator index</description>
+    </indexer>
+</config>

@@ -1,0 +1,14 @@
+<!-- Page hit template -->
+<script type="text/template" id="autocomplete_stores_template">
+    <a class="algoliasearch-autocomplete-hit"">
+        <div class="info-without-thumb">
+            {{{_highlightResult.name.value}}}
+            <div class="details">
+                {{{_highlightResult.street.value}}}<br>
+                {{{_highlightResult.city.value}}}<br>
+                {{{_highlightResult.region.value}}}
+            </div>
+        </div>
+        <div class="algolia-clearfix"></div>
+    </a>
+</script>
